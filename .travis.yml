@@ -1,0 +1,30 @@
+language: go
+sudo: required
+
+branches:
+  only:
+    - master
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: Test standalone binary build
+      go:
+        - 1.x
+      install: true
+
+    - stage: Test Docker image build
+      script:
+        - docker build -t $DOCKER_NAME/mirror .
+        - docker run -d -p 8080:8080 $DOCKER_NAME/mirror
+        - docker ps -a
+
+after_success:
+  - docker login -u="$DOCKER_NAME" -p="$DOCKER_PASSWORD"
+  - docker push $DOCKER_NAME/mirror
+
+notifications:
+  email:
+    on_failure: always

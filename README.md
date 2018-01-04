@@ -1,6 +1,10 @@
 ## damdo/mirror
 
+[![Build Status](https://travis-ci.org/damdo/mirror.svg?branch=master)](https://travis-ci.org/damdo/mirror)
+
 :microscope: HTTP(S) request mirror for Debugging
+
+<br>
 
 ### FEATURES:
 - Mirrors the received requests and their responses -> in the response body and in its STDOUT
