@@ -31,8 +31,8 @@ PORT=80 BODY=1 mirror;
 
 #### 1.2) MAKE REQUESTS
 #### Example: Make a request with curl to mirror
-For example if you make a request form the same host
-the ip will be 127.0.0.1
+For example a request can be made form the same host with curl
+The ip where mirror is running, in this case, will be 127.0.0.1
 ```
 curl -X POST -d 'This is the example body' 127.0.0.1:80
 ```
