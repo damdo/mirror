@@ -20,21 +20,17 @@ func main() {
 		dumpBody = false
 	}
 
+	port := 80
 	// Get port from ENV
-	port, err := strconv.Atoi(os.Getenv("PORT"))
-	if err != nil {
-		log.Fatalln("Invalid PORT specified")
-	}
-
+	rawPort := os.Getenv("PORT")
 	/* Further controls on port not needed
 	http.ListenAndServe already does them */
-	if err != nil {
-		log.Fatalln("Invalid PORT")
-	}
-
-	// Fallback to port 80 PORT if not set
-	if port == 0 {
-		port = 80
+	if rawPort != "" {
+		var err error
+		port, err = strconv.Atoi(rawPort)
+		if err != nil {
+			log.Fatalln("Invalid PORT specified")
+		}
 	}
 
 	// Routes
