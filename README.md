@@ -4,15 +4,17 @@
 
 :microscope: HTTP(S) request mirror for Debugging
 
-<br>
 
 ### FEATURES:
-- Mirrors the received requests and their responses -> in the response body and in its STDOUT
-- Returns Client IP and Server Hostname
-- Single, cross-platform and statically Linked executable (written in Go)
-- Dockerized version available
+- **Mirrors** the received **requests** and their **responses** -> in the response body and in its STDOUT
+- Returns *Client IP* and *Server Hostname*
+- **Single**, **cross-platform** and statically Linked **executable** (written in Go)
+- **Dockerized** version available
 
 <br>
+
+<img src="assets/mirror.gif" >
+
 
 ### 1) USAGE: 
 #### 1.1) TURN ON MIRROR
